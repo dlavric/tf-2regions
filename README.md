@@ -1,5 +1,5 @@
 # Repository for learning Terraform OSS
-This repository has been created only for learning purposes to create a `null resource` in 2 different AWS regions
+This repository has been created only for learning purposes to create 2 AWS instances in 2 different AWS regions
 
 ### Prerequisites
 
