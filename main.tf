@@ -1,27 +1,20 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "3.74.1"
-    }
+resource "aws_instance" "app_server1" {
+  ami           = "ami-00fa576fb10a52a1c"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "instance_1"
   }
 }
 
-provider "aws" {
-  region = "us-east-1"
-  alias  = "region1"
-}
 
-provider "aws" {
-  region = "us-west-2"
-  alias  = "region2"
-}
+resource "aws_instance" "app_server2" {
+  ami           = "ami-08d70e59c07c61a3a"
+  instance_type = "t2.micro"
+  provider = aws.west 
 
-resource "null_resource" "null" {
-  count = 3
-
-  provisioner "local-exec" {
-    command = "echo The number is ${count.index}"
+  tags = {
+    Name = "instance_2"
   }
-
 }
+
