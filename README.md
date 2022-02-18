@@ -37,15 +37,14 @@ This is the output of initializing the Terraform code:
 Initializing the backend...
 
 Initializing provider plugins...
-- Reusing previous version of hashicorp/aws from the dependency lock file
-- Finding latest version of hashicorp/null...
-- Using previously-installed hashicorp/aws v3.74.1
-- Installing hashicorp/null v3.1.0...
-- Installed hashicorp/null v3.1.0 (signed by HashiCorp)
+- Finding hashicorp/aws versions matching "3.74.1"...
+- Installing hashicorp/aws v3.74.1...
+- Installed hashicorp/aws v3.74.1 (signed by HashiCorp)
 
-Terraform has made some changes to the provider dependency selections recorded
-in the .terraform.lock.hcl file. Review those changes and commit them to your
-version control system if they represent changes you intended to make.
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
 
 Terraform has been successfully initialized!
 
@@ -70,22 +69,213 @@ Terraform used the selected providers to generate the following execution plan. 
 
 Terraform will perform the following actions:
 
-  # null_resource.null[0] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
+  # aws_instance.app_server1 will be created
+  + resource "aws_instance" "app_server1" {
+      + ami                                  = "ami-00fa576fb10a52a1c"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "instance_1"
+        }
+      + tags_all                             = {
+          + "Name" = "instance_1"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification {
+          + capacity_reservation_preference = (known after apply)
+
+          + capacity_reservation_target {
+              + capacity_reservation_id = (known after apply)
+            }
+        }
+
+      + ebs_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + snapshot_id           = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+
+      + enclave_options {
+          + enabled = (known after apply)
+        }
+
+      + ephemeral_block_device {
+          + device_name  = (known after apply)
+          + no_device    = (known after apply)
+          + virtual_name = (known after apply)
+        }
+
+      + metadata_options {
+          + http_endpoint               = (known after apply)
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = (known after apply)
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface {
+          + delete_on_termination = (known after apply)
+          + device_index          = (known after apply)
+          + network_interface_id  = (known after apply)
+        }
+
+      + root_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
     }
 
-  # null_resource.null[1] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
+  # aws_instance.app_server2 will be created
+  + resource "aws_instance" "app_server2" {
+      + ami                                  = "ami-08d70e59c07c61a3a"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "instance_2"
+        }
+      + tags_all                             = {
+          + "Name" = "instance_2"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification {
+          + capacity_reservation_preference = (known after apply)
+
+          + capacity_reservation_target {
+              + capacity_reservation_id = (known after apply)
+            }
+        }
+
+      + ebs_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + snapshot_id           = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+
+      + enclave_options {
+          + enabled = (known after apply)
+        }
+
+      + ephemeral_block_device {
+          + device_name  = (known after apply)
+          + no_device    = (known after apply)
+          + virtual_name = (known after apply)
+        }
+
+      + metadata_options {
+          + http_endpoint               = (known after apply)
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = (known after apply)
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface {
+          + delete_on_termination = (known after apply)
+          + device_index          = (known after apply)
+          + network_interface_id  = (known after apply)
+        }
+
+      + root_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
     }
 
-  # null_resource.null[2] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
-    }
-
-Plan: 3 to add, 0 to change, 0 to destroy.
+Plan: 2 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
@@ -93,27 +283,34 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-null_resource.null[1]: Creating...
-null_resource.null[2]: Creating...
-null_resource.null[0]: Creating...
-null_resource.null[1]: Provisioning with 'local-exec'...
-null_resource.null[0]: Provisioning with 'local-exec'...
-null_resource.null[2]: Provisioning with 'local-exec'...
-null_resource.null[0] (local-exec): Executing: ["/bin/sh" "-c" "echo The number is 0"]
-null_resource.null[1] (local-exec): Executing: ["/bin/sh" "-c" "echo The number is 1"]
-null_resource.null[2] (local-exec): Executing: ["/bin/sh" "-c" "echo The number is 2"]
-null_resource.null[0] (local-exec): The number is 0
-null_resource.null[1] (local-exec): The number is 1
-null_resource.null[1]: Creation complete after 0s [id=7512020499674316565]
-null_resource.null[0]: Creation complete after 0s [id=4574653230370836931]
-null_resource.null[2] (local-exec): The number is 2
-null_resource.null[2]: Creation complete after 0s [id=8706799780552385534]
+aws_instance.app_server1: Creating...
+aws_instance.app_server2: Creating...
+aws_instance.app_server1: Still creating... [10s elapsed]
+aws_instance.app_server2: Still creating... [10s elapsed]
+aws_instance.app_server1: Still creating... [20s elapsed]
+aws_instance.app_server2: Still creating... [20s elapsed]
+aws_instance.app_server1: Still creating... [30s elapsed]
+aws_instance.app_server2: Still creating... [30s elapsed]
+aws_instance.app_server1: Creation complete after 39s [id=i-0da2192e192a67211]
+aws_instance.app_server2: Still creating... [40s elapsed]
+aws_instance.app_server2: Creation complete after 41s [id=i-0b3aa8f6245f7f8ae]
 
-Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
+
+- Check the AWS Console for the instances in each region:
+
+Region us-east-1
+![Picture1](https://github.com/dlavric/tf-2regions/blob/main/Screenshot%202022-02-18%20at%2010.28.36.png)
+
+Region us-west-2
+![Picture2](https://github.com/dlavric/tf-2regions/blob/main/Screenshot%202022-02-18%20at%2010.28.55.png)
+
 
 ## Reference Documentation
 
-- [Null Resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource)
+- [Multiple Provider Configurations](https://www.terraform.io/language/providers/configuration#alias-multiple-provider-configurations)
+
+- [Referring to Alternate Provider Configurations](https://www.terraform.io/language/providers/configuration#referring-to-alternate-provider-configurations)
 
 - [AWS Account and Access Keys](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)
